@@ -1,0 +1,4 @@
+behave
+selenium
+pytest
+python-dotenv
