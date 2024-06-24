@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is an automation framework for UI testing using Python, BDD (Behavior Driven Development) with Gherkin syntax, and Allure for reporting. It is designed to be scalable and maintainable, supporting automated UI tests for a booking application.
+This project is an automation framework for UI testing using Python, BDD (Behavior Driven Development) with Gherkin syntax, and Allure for reporting. It is designed to be scalable and maintainable, supporting automated UI tests.
 
 ## Project Structure
 
