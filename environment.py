@@ -5,6 +5,7 @@ from selenium.common.exceptions import WebDriverException, NoSuchWindowException
 from allure_commons.types import AttachmentType
 import configparser
 import logging
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.chrome import ChromeDriverManager
@@ -37,9 +38,20 @@ class Env:
         url = config['MyData']['URL']
         if browser == 'chrome':
             service = ChromeService(ChromeDriverManager().install())
-            options = ChromeOptions()
+            # options = ChromeOptions()
+            options = Options()
+            # command this line "options.add_argument("--headless")" and Make "options.headless = False" to run without headless
+            options.add_argument("--headless")
+            options.headless = True # Enable headless mode
+            # options.headless = False # Disable headless mode
             options.add_argument("--start-maximized")  # Maximize window
             options.add_argument("--disable-notifications")  # Disable notifications
+            options.add_argument("--window-size=1920,1080")  # Set window size
+            options.add_argument("--disable-extensions")  # Disable extensions
+            options.add_argument("--disable-gpu")  # Disable GPU acceleration
+            options.add_argument("--no-sandbox")  # Bypass OS security model
+            options.add_argument("--disable-dev-shm-usage")  # Overcome limited resource problems
+            print("Headless mode is set to:", options.headless)
             driver = webdriver.Chrome(service=service, options=options)
         elif browser == 'firefox':
             service = FirefoxService(GeckoDriverManager().install())
