@@ -41,9 +41,9 @@ class Env:
             # options = ChromeOptions()
             options = Options()
             # command this line "options.add_argument("--headless")" and Make "options.headless = False" to run without headless
-            options.add_argument("--headless")
-            options.headless = True # Enable headless mode
-            # options.headless = False # Disable headless mode
+            # options.add_argument("--headless")
+            # options.headless = True # Enable headless mode
+            options.headless = False # Disable headless mode
             options.add_argument("--start-maximized")  # Maximize window
             options.add_argument("--disable-notifications")  # Disable notifications
             options.add_argument("--window-size=1920,1080")  # Set window size
